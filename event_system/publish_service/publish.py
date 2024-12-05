@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 
 EMAIL_ADDRESS = "ol27281480@gmail.com"
 EMAIL_PASSWORD = "nwjd hffl mvud cwhb"
-RECIPIENT_EMAIL = "denesterov3005@yandex.ru"
+RECIPIENT_EMAIL = "denisnesterov3005@yandex.ru"
 
 def send_email(user, message):
     subject = f"Message from {user}"
