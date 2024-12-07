@@ -2,12 +2,16 @@ import multiprocessing
 from flask import Flask, request, jsonify
 import smtplib
 from email.mime.text import MIMEText
+from dotenv import load_dotenv
+import os
 
 STOP_WORDS = ["bird-watching", "ailurophobia", "mango"]
-EMAIL_ADDRESS = "ol27281480@gmail.com"
-EMAIL_PASSWORD = "nwjd hffl mvud cwhb"
-RECIPIENT_EMAIL = "denisnesterov3005@yandex.ru"
 
+load_dotenv()
+
+EMAIL_ADDRESS = os.getenv('EMAIL_ADDRESS')
+EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
+RECIPIENT_EMAIL = os.getenv('RECIPIENT_EMAIL')
 # REST API Service
 def rest_api_service(output_queue):
     app = Flask(__name__)

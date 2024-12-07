@@ -1,10 +1,14 @@
 import pika
 import smtplib
 from email.mime.text import MIMEText
+from dotenv import load_dotenv
+import os
 
-EMAIL_ADDRESS = "ol27281480@gmail.com"
-EMAIL_PASSWORD = "nwjd hffl mvud cwhb"
-RECIPIENT_EMAIL = "denisnesterov3005@yandex.ru"
+load_dotenv()
+
+EMAIL_ADDRESS = os.getenv('EMAIL_ADDRESS')
+EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
+RECIPIENT_EMAIL = os.getenv('RECIPIENT_EMAIL')
 
 def send_email(user, message):
     subject = f"Message from {user}"
